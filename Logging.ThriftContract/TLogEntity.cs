@@ -15,7 +15,7 @@ using System.Runtime.Serialization;
 using Thrift.Protocol;
 using Thrift.Transport;
 
-namespace Logging.ThriftContract
+namespace PLU.Logging.ThriftContract
 {
 #if !SILVERLIGHT
     [Serializable]

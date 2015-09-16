@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using Thrift.Transport;
-using Logging.ThriftContract;
+using PLU.Logging.ThriftContract;
 
-namespace Logging.Server.Site
+namespace PLU.Logging.Server.Site
 {
     /// <summary>
     /// Recive 的摘要说明

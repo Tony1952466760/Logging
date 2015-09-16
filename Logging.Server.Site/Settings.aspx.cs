@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace Logging.Server.Site
+namespace PLU.Logging.Server.Site
 {
     public partial class Settings : System.Web.UI.Page
     {

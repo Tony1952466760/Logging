@@ -1,4 +1,4 @@
-﻿namespace Logging.Server.Processor
+﻿namespace PLU.Logging.Server.Processor
 {
     internal sealed class LogProcessorManager
     {

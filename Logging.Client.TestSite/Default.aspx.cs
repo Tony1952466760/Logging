@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Logging.Client.TestSite
+namespace PLU.Logging.Client.TestSite
 {
     public partial class Default : System.Web.UI.Page
     {

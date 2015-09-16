@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Logging.Client.LogSender
+namespace PLU.Logging.Client.LogSender
 {
     internal sealed class LogSenderManager
     {

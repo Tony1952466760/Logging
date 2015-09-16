@@ -1,10 +1,10 @@
-﻿using Logging.Server.Viewer;
+﻿using PLU.Logging.Server.Viewer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace Logging.Server.Site
+namespace PLU.Logging.Server.Site
 {
     /// <summary>
     /// StatisticsViewer 的摘要说明

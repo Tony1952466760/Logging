@@ -1,9 +1,9 @@
-﻿using Logging.Server.DB;
+﻿using PLU.Logging.Server.DB;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Logging.Server.Writer
+namespace PLU.Logging.Server.Writer
 {
     internal class MongoDbWriter : ILogWriter
     {

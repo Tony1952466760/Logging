@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Logging.Client
+namespace PLU.Logging.Client
 {
     internal static class Utils
     {

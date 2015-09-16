@@ -14,7 +14,7 @@ using Thrift.Collections;
 using System.Runtime.Serialization;
 using Thrift.Protocol;
 using Thrift.Transport;
-namespace Logging.ThriftContract
+namespace PLU.Logging.ThriftContract
 {
 
     public partial class LogTransferService

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Logging.Client
+namespace PLU.Logging.Client
 {
     
     public class LogEntity

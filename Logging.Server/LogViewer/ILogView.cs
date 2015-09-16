@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Logging.Server.Viewer
+namespace PLU.Logging.Server.Viewer
 {
    public interface ILogViewer
     {

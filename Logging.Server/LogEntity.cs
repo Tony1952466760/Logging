@@ -3,7 +3,7 @@ using MongoDB.Bson.Serialization.Attributes;
 using System;
 using System.Collections.Generic;
 
-namespace Logging.Server
+namespace PLU.Logging.Server
 {
     public class LogEntity
     {

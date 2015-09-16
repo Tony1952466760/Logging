@@ -1,11 +1,11 @@
-﻿using Logging.Server.Viewer;
+﻿using PLU.Logging.Server.Viewer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Web;
 
-namespace Logging.Server.Site
+namespace PLU.Logging.Server.Site
 {
     /// <summary>
     /// LogViewer 的摘要说明

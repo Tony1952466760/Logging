@@ -1,11 +1,11 @@
-﻿using Logging.Server.DB;
+﻿using PLU.Logging.Server.DB;
 using MongoDB.Bson;
 using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Logging.Server.Viewer
+namespace PLU.Logging.Server.Viewer
 {
     internal class MongoDbViewer : ILogViewer
     {

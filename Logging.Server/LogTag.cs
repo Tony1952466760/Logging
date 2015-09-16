@@ -1,6 +1,6 @@
 ﻿using MongoDB.Bson;
 
-namespace Logging.Server
+namespace PLU.Logging.Server
 {
     public class LogTag
     {

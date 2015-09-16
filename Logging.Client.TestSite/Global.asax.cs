@@ -5,15 +5,15 @@ using System.Web;
 using System.Web.Security;
 using System.Web.SessionState;
 
-namespace Logging.Client.TestSite
+namespace PLU.Logging.Client.TestSite
 {
     public class Global : System.Web.HttpApplication
     {
 
         protected void Application_Start(object sender, EventArgs e)
         {
-            Logging.Client.Settings.LoggingBlockElapsed = 1000 * 10;
-            //Logging.Client.Settings.LoggingDisabled = true;
+            PLU.Logging.Client.Settings.LoggingBlockElapsed = 1000 * 10;
+            //PLU.Logging.Client.Settings.LoggingDisabled = true;
         }
 
         protected void Session_Start(object sender, EventArgs e)

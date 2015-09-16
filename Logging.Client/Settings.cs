@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Configuration;
 
-namespace Logging.Client
+namespace PLU.Logging.Client
 {
     public static class Settings
     {

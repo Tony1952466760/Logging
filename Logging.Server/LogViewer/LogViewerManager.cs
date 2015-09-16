@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Configuration;
 
-namespace Logging.Server.Viewer
+namespace PLU.Logging.Server.Viewer
 {
     public sealed class LogViewerManager
     {

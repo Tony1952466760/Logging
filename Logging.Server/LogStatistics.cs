@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Logging.Server
+namespace PLU.Logging.Server
 {
     public class LogStatistics
     {

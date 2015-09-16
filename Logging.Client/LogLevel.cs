@@ -1,4 +1,4 @@
-﻿namespace Logging.Client
+﻿namespace PLU.Logging.Client
 {
     public enum LogLevel
     {

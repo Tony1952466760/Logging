@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Logging.Client
+namespace PLU.Logging.Client
 {
     public interface ILog
     {

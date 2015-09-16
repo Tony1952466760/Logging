@@ -1,7 +1,7 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Driver;
 
-namespace Logging.Server.DB
+namespace PLU.Logging.Server.DB
 {
 
     //server=127.0.0.1:27017,127.0.0.1:27017;SafeMode=false

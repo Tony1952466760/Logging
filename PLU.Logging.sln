@@ -3,19 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logging.Server", "Logging.Server\Logging.Server.csproj", "{C53C8137-4145-4853-87F8-A47CCCFBB24B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PLU.Logging.Server", "Logging.Server\PLU.Logging.Server.csproj", "{C53C8137-4145-4853-87F8-A47CCCFBB24B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logging.Client", "Logging.Client\Logging.Client.csproj", "{99B33ED8-E7E2-4447-97EF-EE27AFD22B50}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PLU.Logging.Client", "Logging.Client\PLU.Logging.Client.csproj", "{99B33ED8-E7E2-4447-97EF-EE27AFD22B50}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logging.Server.Site", "Logging.Server.Site\Logging.Server.Site.csproj", "{858EF4D4-4557-47F4-8E78-283A7E49ED29}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PLU.Logging.Server.Site", "Logging.Server.Site\PLU.Logging.Server.Site.csproj", "{858EF4D4-4557-47F4-8E78-283A7E49ED29}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logging.Client.TestSite", "Logging.Client.TestSite\Logging.Client.TestSite.csproj", "{75D2F2FB-2E14-411D-831D-F47F167CC21D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PLU.Logging.Client.TestSite", "Logging.Client.TestSite\PLU.Logging.Client.TestSite.csproj", "{75D2F2FB-2E14-411D-831D-F47F167CC21D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Thrift", "Thrift\Thrift.csproj", "{04581F78-BC60-49C0-B279-72E525174F0C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logging.ThriftContract", "Logging.ThriftContract\Logging.ThriftContract.csproj", "{9CF113F2-C0A6-4267-8878-1FADEAB1A5BA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PLU.Logging.ThriftContract", "Logging.ThriftContract\PLU.Logging.ThriftContract.csproj", "{9CF113F2-C0A6-4267-8878-1FADEAB1A5BA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logging.Test", "Logging.Test\Logging.Test.csproj", "{257B5778-30EC-4EF3-8580-C29090F6515A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PLU.Logging.Test", "Logging.Test\PLU.Logging.Test.csproj", "{257B5778-30EC-4EF3-8580-C29090F6515A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

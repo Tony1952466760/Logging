@@ -1,1 +1,1 @@
-﻿<%@ Application Codebehind="Global.asax.cs" Inherits="Logging.Client.TestSite.Global" Language="C#" %>
+﻿<%@ Application Codebehind="Global.asax.cs" Inherits="PLU.Logging.Client.TestSite.Global" Language="C#" %>

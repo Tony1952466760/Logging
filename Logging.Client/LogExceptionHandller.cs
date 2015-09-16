@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Logging.Client
+namespace PLU.Logging.Client
 {
     /// <summary>
     /// 处理日志过程中出现的异常
@@ -12,7 +12,7 @@ namespace Logging.Client
 
         public static void WriteLog(Exception ex, int count)
         {
-            string msg = "最近一分钟该应用内(" + Settings.AppId + ")Logging.Client发生" + count + "条异常数量";
+            string msg = "最近一分钟该应用内(" + Settings.AppId + ")PLU.Logging.Client发生" + count + "条异常数量";
             msg += "</br>";
             if (count > 0)
             {

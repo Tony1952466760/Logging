@@ -11,8 +11,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Logging.Server.Site</RootNamespace>
-    <AssemblyName>Logging.Server.Site</AssemblyName>
+    <RootNamespace>PLU.Logging.Server.Site</RootNamespace>
+    <AssemblyName>PLU.Logging.Server.Site</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -189,9 +189,9 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <ProjectReference Include="..\Logging.Server\Logging.Server.csproj">
+    <ProjectReference Include="..\Logging.Server\PLU.Logging.Server.csproj">
       <Project>{c53c8137-4145-4853-87f8-a47cccfbb24b}</Project>
-      <Name>Logging.Server</Name>
+      <Name>PLU.Logging.Server</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

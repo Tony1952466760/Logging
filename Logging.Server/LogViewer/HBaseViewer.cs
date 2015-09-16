@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Logging.Server.Viewer
+namespace PLU.Logging.Server.Viewer
 {
     internal class HBaseViewer : ILogViewer
     {

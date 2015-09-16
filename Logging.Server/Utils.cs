@@ -1,7 +1,7 @@
 ﻿using System;
 
 
-namespace Logging.Server
+namespace PLU.Logging.Server
 {
     public static class Utils
     {

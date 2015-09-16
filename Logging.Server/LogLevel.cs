@@ -1,4 +1,4 @@
-﻿namespace Logging.Server
+﻿namespace PLU.Logging.Server
 {
     public  enum LogLevel
     {

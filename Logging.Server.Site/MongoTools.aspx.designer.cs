@@ -7,7 +7,7 @@
 // </自动生成>
 //------------------------------------------------------------------------------
 
-namespace Logging.Server.Site {
+namespace PLU.Logging.Server.Site {
     
     
     public partial class MongoTools {

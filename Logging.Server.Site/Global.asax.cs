@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Web;
 
-namespace Logging.Server.Site
+namespace PLU.Logging.Server.Site
 {
     public class Global : HttpApplication
     {

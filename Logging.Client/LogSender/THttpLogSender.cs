@@ -1,11 +1,11 @@
-﻿using Logging.ThriftContract;
+﻿using PLU.Logging.ThriftContract;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
 using Thrift.Protocol;
 using Thrift.Transport;
 
-namespace Logging.Client
+namespace PLU.Logging.Client
 {
     /// <summary>
     /// Thrift Http协议发送消息

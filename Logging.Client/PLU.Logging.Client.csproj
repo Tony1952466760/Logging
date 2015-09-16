@@ -7,8 +7,8 @@
     <ProjectGuid>{99B33ED8-E7E2-4447-97EF-EE27AFD22B50}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Logging.Client</RootNamespace>
-    <AssemblyName>Logging.Client</AssemblyName>
+    <RootNamespace>PLU.Logging.Client</RootNamespace>
+    <AssemblyName>PLU.Logging.Client</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />

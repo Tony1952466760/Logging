@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Logging.Server.Processor
+namespace PLU.Logging.Server.Processor
 {
     /// <summary>
     /// 处理队列元素(日志)的处理器

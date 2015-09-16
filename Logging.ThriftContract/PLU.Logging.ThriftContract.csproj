@@ -4,16 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{257B5778-30EC-4EF3-8580-C29090F6515A}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{9CF113F2-C0A6-4267-8878-1FADEAB1A5BA}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Logging.Test</RootNamespace>
-    <AssemblyName>Logging.Test</AssemblyName>
+    <RootNamespace>PLU.Logging.ThriftContract</RootNamespace>
+    <AssemblyName>PLU.Logging.ThriftContract</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -32,9 +30,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\Lib\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -45,20 +40,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="LogTransferService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TLogEntity.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="log.thrift" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Logging.Client\Logging.Client.csproj">
-      <Project>{99b33ed8-e7e2-4447-97ef-ee27afd22b50}</Project>
-      <Name>Logging.Client</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Logging.Server\Logging.Server.csproj">
-      <Project>{c53c8137-4145-4853-87f8-a47cccfbb24b}</Project>
-      <Name>Logging.Server</Name>
+    <ProjectReference Include="..\Thrift\Thrift.csproj">
+      <Project>{04581f78-bc60-49c0-b279-72e525174f0c}</Project>
+      <Name>Thrift</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

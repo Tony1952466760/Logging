@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Logging.Server.Writer
+namespace PLU.Logging.Server.Writer
 {
     interface ILogWriter
     {

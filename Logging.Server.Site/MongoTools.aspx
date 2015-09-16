@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="MongoTools.aspx.cs" Inherits="Logging.Server.Site.MongoTools" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="MongoTools.aspx.cs" Inherits="PLU.Logging.Server.Site.MongoTools" %>
 
 <!DOCTYPE html>
 

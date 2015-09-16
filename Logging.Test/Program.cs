@@ -1,17 +1,13 @@
-﻿using Logging.Client;
-using Logging.Server;
-using Newtonsoft.Json.Linq;
+﻿using Newtonsoft.Json.Linq;
+using PLU.Logging.Client;
+using PLU.Logging.Server;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Logging.Test
+namespace PLU.Logging.Test
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             //string str = "！@##￥&*&……%￥%adadad阿达add第三大大豆1233123ASASASAS";
             //var result1 = Logging.Server.Utils.BKDRHash(str);//1236678004

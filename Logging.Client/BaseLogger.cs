@@ -1,4 +1,4 @@
-﻿using Logging.Client.LogSender;
+﻿using PLU.Logging.Client.LogSender;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -8,7 +8,7 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading;
 
-namespace Logging.Client
+namespace PLU.Logging.Client
 {
     internal abstract class BaseLogger : ILog
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Configuration;
 
-namespace Logging.Server.Writer
+namespace PLU.Logging.Server.Writer
 {
     internal sealed class LogWriterManager
     {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Logging.Client
+namespace PLU.Logging.Client
 {
     public sealed class LogManager
     {

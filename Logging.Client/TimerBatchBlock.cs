@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Logging.Client
+namespace PLU.Logging.Client
 {
     /// <summary>
     /// 多线程消费队列。将输入元素打包输出。
@@ -153,7 +153,7 @@ namespace Logging.Client
         }
 
         /// <summary>
-        /// 报告Logging.Client自身异常
+        /// 报告PLU.Logging.Client自身异常
         /// </summary>
         private void ReportException()
         {

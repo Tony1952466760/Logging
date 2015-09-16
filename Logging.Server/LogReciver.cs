@@ -1,11 +1,11 @@
-﻿using Logging.Server.Processor;
+﻿using PLU.Logging.Server.Processor;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
-using Logging.ThriftContract;
+using PLU.Logging.ThriftContract;
 using MongoDB.Bson;
 
-namespace Logging.Server
+namespace PLU.Logging.Server
 {
     public class LogReciver : LogTransferService.Iface
     {

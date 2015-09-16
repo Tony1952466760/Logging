@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Configuration;
 
-namespace Logging.Client
+namespace PLU.Logging.Client
 {
     internal class SimpleLogger : BaseLogger, ILog
     {

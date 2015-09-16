@@ -1,8 +1,8 @@
-﻿using Logging.Server.DB;
+﻿using PLU.Logging.Server.DB;
 using MongoDB.Driver;
 using System;
 
-namespace Logging.Server.Site
+namespace PLU.Logging.Server.Site
 {
     public partial class MongoTools : System.Web.UI.Page
     {

@@ -3,7 +3,7 @@ using System.Collections.Concurrent;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Logging.Server
+namespace PLU.Logging.Server
 {
     /// <summary>
     /// 多线程消费队列（BlockingCollection实现）
