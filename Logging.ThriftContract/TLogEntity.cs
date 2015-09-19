@@ -17,6 +17,7 @@ using Thrift.Transport;
 
 namespace Logging.ThriftContract
 {
+
 #if !SILVERLIGHT
     [Serializable]
 #endif
@@ -26,8 +27,6 @@ namespace Logging.ThriftContract
         private string _Message;
         private sbyte _Level;
         private long _Time;
-        private long _IP;
-        private int _AppId;
         private string _Source;
         private int _Thread;
         private Dictionary<string, string> _Tags;
@@ -84,32 +83,6 @@ namespace Logging.ThriftContract
             }
         }
 
-        public long IP
-        {
-            get
-            {
-                return _IP;
-            }
-            set
-            {
-                __isset.IP = true;
-                this._IP = value;
-            }
-        }
-
-        public int AppId
-        {
-            get
-            {
-                return _AppId;
-            }
-            set
-            {
-                __isset.AppId = true;
-                this._AppId = value;
-            }
-        }
-
         public string Source
         {
             get
@@ -160,8 +133,6 @@ namespace Logging.ThriftContract
             public bool Message;
             public bool Level;
             public bool Time;
-            public bool IP;
-            public bool AppId;
             public bool Source;
             public bool Thread;
             public bool Tags;
@@ -225,26 +196,6 @@ namespace Logging.ThriftContract
                         }
                         break;
                     case 5:
-                        if (field.Type == TType.I64)
-                        {
-                            IP = iprot.ReadI64();
-                        }
-                        else
-                        {
-                            TProtocolUtil.Skip(iprot, field.Type);
-                        }
-                        break;
-                    case 6:
-                        if (field.Type == TType.I32)
-                        {
-                            AppId = iprot.ReadI32();
-                        }
-                        else
-                        {
-                            TProtocolUtil.Skip(iprot, field.Type);
-                        }
-                        break;
-                    case 7:
                         if (field.Type == TType.String)
                         {
                             Source = iprot.ReadString();
@@ -254,7 +205,7 @@ namespace Logging.ThriftContract
                             TProtocolUtil.Skip(iprot, field.Type);
                         }
                         break;
-                    case 8:
+                    case 6:
                         if (field.Type == TType.I32)
                         {
                             Thread = iprot.ReadI32();
@@ -264,7 +215,7 @@ namespace Logging.ThriftContract
                             TProtocolUtil.Skip(iprot, field.Type);
                         }
                         break;
-                    case 9:
+                    case 7:
                         if (field.Type == TType.Map)
                         {
                             {
@@ -336,29 +287,11 @@ namespace Logging.ThriftContract
                 oprot.WriteI64(Time);
                 oprot.WriteFieldEnd();
             }
-            if (__isset.IP)
-            {
-                field.Name = "IP";
-                field.Type = TType.I64;
-                field.ID = 5;
-                oprot.WriteFieldBegin(field);
-                oprot.WriteI64(IP);
-                oprot.WriteFieldEnd();
-            }
-            if (__isset.AppId)
-            {
-                field.Name = "AppId";
-                field.Type = TType.I32;
-                field.ID = 6;
-                oprot.WriteFieldBegin(field);
-                oprot.WriteI32(AppId);
-                oprot.WriteFieldEnd();
-            }
             if (Source != null && __isset.Source)
             {
                 field.Name = "Source";
                 field.Type = TType.String;
-                field.ID = 7;
+                field.ID = 5;
                 oprot.WriteFieldBegin(field);
                 oprot.WriteString(Source);
                 oprot.WriteFieldEnd();
@@ -367,7 +300,7 @@ namespace Logging.ThriftContract
             {
                 field.Name = "Thread";
                 field.Type = TType.I32;
-                field.ID = 8;
+                field.ID = 6;
                 oprot.WriteFieldBegin(field);
                 oprot.WriteI32(Thread);
                 oprot.WriteFieldEnd();
@@ -376,7 +309,7 @@ namespace Logging.ThriftContract
             {
                 field.Name = "Tags";
                 field.Type = TType.Map;
-                field.ID = 9;
+                field.ID = 7;
                 oprot.WriteFieldBegin(field);
                 {
                     oprot.WriteMapBegin(new TMap(TType.String, TType.String, Tags.Count));
@@ -424,20 +357,6 @@ namespace Logging.ThriftContract
                 __first = false;
                 __sb.Append("Time: ");
                 __sb.Append(Time);
-            }
-            if (__isset.IP)
-            {
-                if (!__first) { __sb.Append(", "); }
-                __first = false;
-                __sb.Append("IP: ");
-                __sb.Append(IP);
-            }
-            if (__isset.AppId)
-            {
-                if (!__first) { __sb.Append(", "); }
-                __first = false;
-                __sb.Append("AppId: ");
-                __sb.Append(AppId);
             }
             if (Source != null && __isset.Source)
             {

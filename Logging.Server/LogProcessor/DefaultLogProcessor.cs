@@ -8,7 +8,7 @@ namespace Logging.Server.Processor
     /// </summary>
     internal class DefaultLogProcessor : ILogProcessor
     {
-        public void Process(IList<LogEntity> logs)
+        public void ProcessLog(IList<LogEntity> logs)
         {
             var logWriter = LogWriterManager.GetLogWriter();
 

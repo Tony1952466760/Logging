@@ -43,6 +43,8 @@
     <Compile Include="LogTransferService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TLogEntity.cs" />
+    <Compile Include="TMetricEntity.cs" />
+    <Compile Include="TMsg.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="log.thrift" />

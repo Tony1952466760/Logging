@@ -12,8 +12,11 @@ namespace Logging.Client
     /// </summary>
     internal class TSocketLogSender : LogSenderBase
     {
-        public override void Send(IList<LogEntity> logEntities)
+        public override void Send(IList<ILogEntity> logEntities)
         {
+            if (logEntities == null || logEntities.Count <= 0) { return; }
+            TMsg tmsg = this.CreateTMsg(logEntities);
+
             var socket = new TSocket("localhost", 9813);
             socket.Timeout = SENDER_TIMEOUT;
             var transport = new TFramedTransport(socket);
@@ -21,22 +24,8 @@ namespace Logging.Client
             var client = new LogTransferService.Client(protocol);
             transport.Open();
 
-            var _logEntities = new List<TLogEntity>();
-            foreach (var item in logEntities)
-            {
-                var _log = new TLogEntity();
-                _log.IP = item.IP;
-                _log.Level = (sbyte)item.Level;
-                _log.Message = item.Message;
-                _log.Tags = item.Tags;
-                _log.Title = item.Title;
-                _log.Source = item.Source;
-                _log.Thread = item.Thread;
-                _log.Time = item.Time;
-                _log.AppId = item.AppId;
-                _logEntities.Add(_log);
-            }
-            client.Log(_logEntities);
+        
+            client.Log(tmsg);
             transport.Close();
            
         }

@@ -50,6 +50,12 @@
     <Compile Include="..\Logging.ThriftContract\TLogEntity.cs">
       <Link>ThriftContract\TLogEntity.cs</Link>
     </Compile>
+    <Compile Include="..\Logging.ThriftContract\TMetricEntity.cs">
+      <Link>ThriftContract\TMetricEntity.cs</Link>
+    </Compile>
+    <Compile Include="..\Logging.ThriftContract\TMsg.cs">
+      <Link>ThriftContract\TMsg.cs</Link>
+    </Compile>
     <Compile Include="..\Thrift\Thrift\Collections\TCollections.cs">
       <Link>Thrift\Collections\TCollections.cs</Link>
     </Compile>

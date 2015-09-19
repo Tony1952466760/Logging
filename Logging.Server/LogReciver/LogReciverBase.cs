@@ -7,12 +7,13 @@ using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using System.Threading;
+using Thrift.Protocol;
 
 namespace Logging.Server.LogReciver
 {
     public  class LogReciverBase : LogTransferService.Iface
     {
-        private static BlockingActionQueue<IList<LogEntity>> queue;
+        private static BlockingActionQueue<IList<TMsg>> queue;
 
         private static int server_appId = Convert.ToInt32(ConfigurationManager.AppSettings["AppId"]);
 
@@ -20,21 +21,23 @@ namespace Logging.Server.LogReciver
         {
         }
 
+       static ILogProcessor processor = LogProcessorManager.GetLogProcessor();
+
         static LogReciverBase()
         {
             int processTaskNum = Convert.ToInt32(ConfigurationManager.AppSettings["ProcessTaskNum"]);
             int blockingQueueLength = Convert.ToInt32(ConfigurationManager.AppSettings["BlockingQueueLength"]);
 
-            queue = new BlockingActionQueue<IList<LogEntity>>(processTaskNum, (LogEntities) =>
+            queue = new BlockingActionQueue<IList<TMsg>>(processTaskNum, (LogEntities) =>
             {
                 ProcessLog(LogEntities);
             }, blockingQueueLength);
         }
 
-        private static void ProcessLog(IList<LogEntity> logs)
+        private static void ProcessLog(IList<TMsg> logs)
         {
-            var processor = LogProcessorManager.GetLogProcessor();
-            processor.Process(logs);
+         
+            processor.ProcessLog(logs);
         }
 
         public void Log(List<TLogEntity> logEntities)
@@ -92,6 +95,38 @@ namespace Logging.Server.LogReciver
             #endregion 溢出处理
         }
 
+        public void Log(List<TMsg> _logEntities)
+        {
+            int over_count = queue.Enqueue(_logEntities);
+
+            #region 溢出处理
+
+            if (over_count > 0)
+            {
+                string msg = "Logging_Server_Queue溢出数量:" + over_count + " 。 建议增加 BlockingQueueLength 配置值";
+                var over_log_tags = new List<string> { "_title_=Logging_Server_Over" };
+
+                LogEntity over_log = new LogEntity();
+                over_log.IP = ServerIPNum;
+                over_log.Level = LogLevel.Error;
+                over_log.Message = msg;
+                over_log.Tags = over_log_tags;
+                over_log.Title = "Logging_Server_Over";
+                over_log.Source = "Logging.Server.LogReciver";
+                over_log.Thread = Thread.CurrentThread.ManagedThreadId;
+                over_log.Time = Utils.GetTimeStamp(DateTime.Now);
+                over_log.AppId = server_appId;
+
+                List<LogEntity> over_logs = new List<LogEntity>();
+                over_logs.Add(over_log);
+
+                processor.ProcessLog(over_logs);
+               // ProcessLog(over_logs);
+            }
+
+            #endregion 溢出处理
+        }
+
         #region 私有成员
 
         private static long serverIPNum;
@@ -132,6 +167,9 @@ namespace Logging.Server.LogReciver
             catch (Exception) { str = string.Empty; }
             return str;
         }
+
+      
+      
 
         #endregion 私有成员
     }

@@ -12,7 +12,7 @@ namespace Logging.Client
 {
     internal abstract class BaseLogger : ILog
     {
-        private static ITimerActionBlock<LogEntity> block;
+        private static ITimerActionBlock<ILogEntity> block;
 
         private string Source { get; set; }
 
@@ -57,19 +57,21 @@ namespace Logging.Client
 
             if (LoggingTaskNum == 1)
             {
-                block = new TimerActionBlock<LogEntity>((buffer) =>
+                block = new TimerActionBlock<ILogEntity>((buffer) =>
                 {
                     sender.Send(buffer);
                 }, LoggingQueueLength, LoggingBufferSize, LoggingBlockElapsed);
             }
             else
             {
-                block = new ThreadedTimerActionBlock<LogEntity>(LoggingTaskNum, (buffer) =>
+                block = new ThreadedTimerActionBlock<ILogEntity>(LoggingTaskNum, (buffer) =>
                 {
                     sender.Send(buffer);
                 }, LoggingQueueLength, LoggingBufferSize, LoggingBlockElapsed);
             }
         }
+
+
 
         public void Debug(string message)
         {
@@ -136,18 +138,28 @@ namespace Logging.Client
             this.Error(ex.Message, ex.ToString());
         }
 
+        public void Metric(string name, double value, Dictionary<string, string> tags = null)
+        {
+            var Metric = new MetricEntity();
+            Metric.Name = name;
+            Metric.Value = value;
+            Metric.Tags = tags;
+            Metric.Time = Utils.GetUnixTime(DateTime.Now);
+            block.Enqueue(Metric);
+            //PrivatePoint(name, value, tags);
+            //SysPoint();
+        }
+
         protected LogEntity CreateLog(string source, string title, string message, Dictionary<string, string> tags, LogLevel level)
         {
             LogEntity log = new LogEntity();
-            log.IP = ServerIPNum;
             log.Level = level;
             log.Message = message;
             log.Tags = tags;
-            log.Time = Utils.GetTimeStamp(DateTime.Now);
+            log.Time = Utils.GetTimeTicks(DateTime.Now);
             log.Title = title;
             log.Source = source;
             log.Thread = Thread.CurrentThread.ManagedThreadId;
-            log.AppId = Settings.AppId;
             if (log.Tags == null)
             {
                 log.Tags = new Dictionary<string, string>();
@@ -212,47 +224,6 @@ namespace Logging.Client
             return resp;
         }
 
-        #region 私有成员
 
-        private static long serverIPNum;
-
-        private static long ServerIPNum
-        {
-            get
-            {
-                if (serverIPNum <= 0)
-                {
-                    string serverIP = GetServerIP();
-                    serverIPNum = Utils.IPToNumber(serverIP);
-                }
-                return serverIPNum;
-            }
-        }
-
-        /// <summary>
-        /// 获取服务器IP
-        /// </summary>
-        /// <returns></returns>
-        private static string GetServerIP()
-        {
-            string str = "127.0.0.1";
-            try
-            {
-                string hostName = Dns.GetHostName();
-                var hostEntity = Dns.GetHostEntry(hostName);
-                var ipAddressList = hostEntity.AddressList;
-                var ipAddress = ipAddressList.FirstOrDefault(ip => ip.AddressFamily == AddressFamily.InterNetwork);
-
-                if (ipAddress != null)
-                {
-                    str = ipAddress.ToString();
-                }
-                return str;
-            }
-            catch (Exception) { str = string.Empty; }
-            return str;
-        }
-
-        #endregion 私有成员
     }
 }

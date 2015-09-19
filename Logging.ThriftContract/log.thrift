@@ -12,8 +12,20 @@ struct TLogEntity {   #  ×¢ÊÍ2
     9: map<string,string> Tags
   }
 
+  struct TMetricEntity {   #  ×¢ÊÍ2 
+    1: string Name 
+    2: double Value 
+    3: i64    Time 
+    4: map<string,string> Tags
+  }
+
+struct TMessage {   #  ×¢ÊÍ2 
+    1: list<TLogEntity> logEntities 
+    2: list<TMetricEntity> metricEntities
+  }
+
 
 service LogTransferService {  #  ×¢ÊÍ3 
    
-   void Log(1:list<TLogEntity> logEntities)  
+   void Log(1:TMessage msg)  
 }
